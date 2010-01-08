@@ -1,4 +1,6 @@
 class Card
+  attr_reader :number_value, :value, :suite
+  
   @@picture_cards = {
     "J" => 11,
     "Q" => 12,
@@ -35,12 +37,6 @@ class Card
   end
   
   
-  def number_value
-    @number_value
-  end
   
-  def suite
-    @suite
-  end
 
 end

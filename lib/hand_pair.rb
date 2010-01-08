@@ -2,23 +2,36 @@ require 'hand'
 
 class HandPair < Hand
 
-  def matches
+  def initialize(cards_string)
+    super(cards_string)
+    
     card_groups = {}
     @cards.each do |card|
-      if card_groups.key? card.number_value
-        card_groups[card.number_value] += 1
+      if card_groups.key? card.value
+        card_groups[card.value] += 1
       else
-        card_groups[card.number_value] = 1
+        card_groups[card.value] = 1
       end
     end
     
-    card_groups.values.each do |val|
+    card_groups.each do |key, val|
       if val >= 2
-        return true
+        @pair_value = key
       end
     end
-    
-    false
+  end
+
+
+  def matches?
+    !@pair_value.nil?
+  end
+  
+  def to_s
+    if matches?
+      "Pair of #{@pair_value}"
+    else
+      "NOT PAIR"
+    end
   end
   
 end
