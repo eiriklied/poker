@@ -19,8 +19,4 @@ describe Hand do
     cards[1].number_value.should == 3
   end
 
-  it "should fail on invalid cards" do
-    cards = Hand.new("22H").cards
-    cards[0].suite.should raise_error  
-  end
 end

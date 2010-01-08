@@ -14,5 +14,17 @@ describe Card do
     card.number_value.should == 12
     card.suite.should == "K"
   end
+  
+  it "should fail on invalid number value" do
+     lambda {Card.new("22H")}.should raise_error
+     lambda {Card.new("0H")}.should raise_error
+     lambda {Card.new("PH")}.should raise_error
+  end
+  
+  it "should fail on invalid suite" do
+    lambda {Card.new("2X")}.should raise_error
+  end
+   
+   
 
 end
