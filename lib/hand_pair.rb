@@ -34,4 +34,8 @@ class HandPair < Hand
     end
   end
   
+  def score
+    2
+  end
+  
 end

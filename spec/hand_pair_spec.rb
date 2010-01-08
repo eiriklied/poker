@@ -24,5 +24,11 @@ describe HandPair do
     pair = HandPair.new("AS 9D 2C 3C 4C")
     pair.to_s.should == "NOT PAIR"
   end
+  
+  it "should have score 2" do
+    pair = HandPair.new("2H")
+    pair.score.should == 2
+  end
+  
 
 end

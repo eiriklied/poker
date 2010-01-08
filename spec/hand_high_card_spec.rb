@@ -19,6 +19,10 @@ describe HandHighCard do
     end  
   end
   
+  it "should have score 1" do
+    highcard = HandHighCard.new(hand_examples[0][0])
+    highcard.score.should == 1
+  end
 
   
 end
